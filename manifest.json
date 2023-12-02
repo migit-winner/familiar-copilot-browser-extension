@@ -5,8 +5,8 @@
     "permissions": ["activeTab"],
     "content_scripts": [
       {
-        "matches": ["https://mail.google.com/*"],
-        "js": ["gmail.js"]
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
       }
     ],
     "background": {

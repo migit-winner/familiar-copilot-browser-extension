@@ -1,16 +1,9 @@
 const removeElementById = (id) => {
-    var element = document.getElementById(id);
+    const element = document.getElementById(id);
     if (element) {
         element.parentNode.removeChild(element);
     }
 }
-
-chrome.runtime.onMessage.addListener((request) => {
-    if (request.action === "accept-suggestion") {
-        console.log("ショートカットがコンテンツスクリプトでアクティブになりました！");
-        // ここで必要なアクションを実行します
-    }
-})
 
 const handleInputEvent = (event) => {
     // すでにカードが表示されている場合は削除
@@ -75,3 +68,10 @@ const handleInputEvent = (event) => {
 }
 
 document.addEventListener('input', handleInputEvent);
+
+chrome.runtime.onMessage.addListener((request) => {
+    if (request.action === "accept-suggestion") {
+        console.log("ショートカットがコンテンツスクリプトでアクティブになりました！");
+        // ここで必要なアクションを実行します
+    }
+});

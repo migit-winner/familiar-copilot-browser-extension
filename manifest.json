@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Familiar Copilot",
+    "version": "1.0",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["gmail.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "commands": {
+      "accept-suggestion": {
+        "suggested_key": {
+          "default": "Ctrl+Space",
+          "mac": "Command+Space"
+        },
+        "description": "提案を受け入れる"
+      }
+    }
+  }
+  
